@@ -17,13 +17,6 @@ export function isArray (arr: any): boolean %checks {
 }
 
 /**
- * 转变一个类数组对象为数组
- */
-export function makeArray (obj: any): Array<any> {
-  return Array.from(obj);
-}
-
-/**
  * 判断是否为function
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]

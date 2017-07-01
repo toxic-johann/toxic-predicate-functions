@@ -38,21 +38,6 @@ describe('isArray', () => {
   });
 });
 
-describe('makeArray', () => {
-  const examples = [
-    { length: 10 },
-    document.querySelectorAll('body'),
-    a => a,
-    (function () { return arguments; })(1, 2, 3),
-    'str', 1, true, false
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.makeArray(example).constructor).toBe(Array);
-    });
-  });
-});
-
 describe('isNumeric', () => {
   const examples = [
     1, 1.1, -1.2, '1.1',
