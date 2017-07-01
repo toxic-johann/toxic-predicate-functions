@@ -7,3 +7,10 @@
 [![devDependency Status](https://david-dm.org/toxic-johann/toxic-predicate-functions/dev-status.svg)](https://david-dm.org/toxic-johann/toxic-predicate-functions?type=dev)
 
 predicate functions collection
+
+## get started
+
+```shell
+npm install toxic-predicate-functions --save
+```
+
