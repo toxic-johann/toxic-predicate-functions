@@ -4,7 +4,7 @@
  * @param  {Anything}  obj
  * @return {Boolean}   return true when val is undefined or null
  */
-export function isVoid (obj: any): boolean %checks {
+export function isVoid (obj: any): boolean {
   return obj === undefined || obj === null;
 }
 /**
@@ -12,7 +12,7 @@ export function isVoid (obj: any): boolean %checks {
  * @param {Anything} arr
  * @return {Boolean} true when it is a boolean
  */
-export function isArray (arr: any): boolean %checks {
+export function isArray (arr: any): boolean {
   return Array.isArray(arr);
 }
 
@@ -21,7 +21,7 @@ export function isArray (arr: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isFunction (obj: any): boolean %checks {
+export function isFunction (obj: any): boolean {
   return typeof obj === 'function';
 }
 
@@ -30,16 +30,16 @@ export function isFunction (obj: any): boolean %checks {
  * @param  {Anything}  obj 传入对象
  * @return {Boolean}     [description]
  */
-export function isObject (obj: any): boolean %checks {
+export function isObject (obj: any): boolean {
   // incase of arrow function and array
-  return !!obj && typeof obj === 'object' && Object(obj) === obj && String(obj) === '[object Object]' && !isFunction(obj) && !isArray(obj);
+  return Object(obj) === obj && String(obj) === '[object Object]' && !isFunction(obj) && !isArray(obj);
 }
 /**
  * to tell you if it's a real number
  * @param  {Anything}  obj
  * @return {Boolean}   return true when it's a number
  */
-export function isNumber (obj: any): boolean %checks {
+export function isNumber (obj: any): boolean {
   return typeof obj === 'number';
 }
 /**
@@ -47,7 +47,7 @@ export function isNumber (obj: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isNumeric (obj: any): boolean %checks {
+export function isNumeric (obj: any): boolean {
   return !isArray(obj) && (obj - Number.parseFloat(obj) + 1) >= 0;
 }
 /**
@@ -55,7 +55,7 @@ export function isNumeric (obj: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isInteger (num: any): boolean %checks {
+export function isInteger (num: any): boolean {
   return Number.isInteger(num);
 }
 
@@ -80,7 +80,7 @@ export function isEmpty (obj: any): boolean {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isEvent (obj: any): boolean %checks {
+export function isEvent (obj: any): boolean {
   return obj instanceof Event || obj.originalEvent instanceof Event;
 }
 /**
@@ -88,7 +88,7 @@ export function isEvent (obj: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isBlob (obj: any): boolean %checks {
+export function isBlob (obj: any): boolean {
   return obj instanceof Blob;
 }
 /**
@@ -96,7 +96,7 @@ export function isBlob (obj: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isFile (obj: any): boolean %checks {
+export function isFile (obj: any): boolean {
   return isBlob(obj) && isString(obj.name);
 }
 /**
@@ -104,7 +104,7 @@ export function isFile (obj: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isDate (obj: any): boolean %checks {
+export function isDate (obj: any): boolean {
   return Object.prototype.toString.call(obj) === '[object Date]';
 }
 /**
@@ -112,17 +112,16 @@ export function isDate (obj: any): boolean %checks {
  * @param  {Anything}  str [description]
  * @return {Boolean}     [description]
  */
-export function isString (str: any): boolean %checks {
-  return typeof str === 'string';
-   // || str instanceof String;
-   // not support new String() because of flow
+export function isString (str: any): boolean {
+  return typeof str === 'string'
+   || str instanceof String;
 }
 /**
  * is Boolean or not
  * @param  {Anything} bool
  * @return {Boolean}
  */
-export function isBoolean (bool: any): boolean %checks {
+export function isBoolean (bool: any): boolean {
   return typeof bool === 'boolean';
 }
 /**
@@ -130,7 +129,7 @@ export function isBoolean (bool: any): boolean %checks {
  * @param {Anything} obj
  * @return {boolean}
  */
-export function isPromise (obj: any): boolean %checks {
+export function isPromise (obj: any): boolean {
   return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 }
 /**
@@ -138,7 +137,7 @@ export function isPromise (obj: any): boolean %checks {
  * @param  {Anyting}  val
  * @return {Boolean}  true when type is number/string/boolean/undefined/null
  */
-export function isPrimitive (val: any): boolean %checks {
+export function isPrimitive (val: any): boolean {
   return isVoid(val) || isBoolean(val) || isString(val) || isNumber(val);
 }
 /**
@@ -146,7 +145,7 @@ export function isPrimitive (val: any): boolean %checks {
  * @param  {Anything}  str [description]
  * @return {Boolean}     [description]
  */
-export function isUrl (str: any): boolean %checks {
+export function isUrl (str: any): boolean {
   return isString(str) && !!str.match(/^((https?|ftp|rtsp|mms):\/\/)(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6}|localhost)(:[0-9]{1,4})?((\/?)|(\/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+\/?)$/i);
 }
 /**
@@ -154,7 +153,7 @@ export function isUrl (str: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isNode (obj: any): boolean %checks {
+export function isNode (obj: any): boolean {
   return !!(typeof Node === 'object'
       ? obj instanceof Node
       : obj &&
@@ -167,7 +166,7 @@ export function isNode (obj: any): boolean %checks {
  * @param  {Anything}  obj [description]
  * @return {Boolean}     [description]
  */
-export function isElement (obj: any): boolean %checks {
+export function isElement (obj: any): boolean {
   return !!(typeof HTMLElement === 'object'
     ? obj instanceof HTMLElement
     : obj &&
@@ -211,6 +210,14 @@ export function isPosterityNode (parent: Node, child: Node): boolean {
  * @param  {string}  str only accept string
  * @return {Boolean}
  */
-export function isHTMLString (str: string): boolean %checks {
+export function isHTMLString (str: string): boolean {
   return /<[^>]+?>/.test(str);
+}
+/**
+ * check if is an error
+ * @param {anything} val
+ * @return {boolean}
+ */
+export function isError (val: any): boolean {
+  return val instanceof Error;
 }

@@ -129,7 +129,7 @@ describe('isString', () => {
     false, true, true, true,
     false, false, false, false,
     false, false, false, false,
-    false
+    true
   ];
   examples.forEach((example, index) => {
     test(index.toString(), () => {
@@ -287,7 +287,7 @@ describe('isDate', () => {
 describe('isPrimitive', () => {
   const examples = [
     1, String('123'), '1' + '2', '1.1',
-        {a: 123}, {}, function (argument) {}, () => console.log('hello'),
+    {a: 123}, {}, function (argument) {}, () => console.log('hello'),
     undefined, [], [1, 2, 3], null,
     new String(), true, new Boolean(), new Date() // eslint-disable-line no-new-wrappers
   ];
@@ -295,7 +295,7 @@ describe('isPrimitive', () => {
     true, true, true, true,
     false, false, false, false,
     true, false, false, true,
-    false, true, false, false
+    true, true, false, false
   ];
   examples.forEach((example, index) => {
     test(index.toString(), () => {
@@ -406,4 +406,9 @@ describe('isPromise', () => {
       expect(utils.isPromise(example)).toBe(results[index]);
     });
   });
+});
+
+describe('isError', () => {
+  expect(utils.isError(new Error('sth'))).toBe(true);
+  expect(utils.isError(123)).toBe(false);
 });
