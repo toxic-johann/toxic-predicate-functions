@@ -15,6 +15,7 @@ const babelConfig = {
       'flow',
       ['latest', {es2015: {modules: false}}]
     ],
+    plugins: ['transform-runtime'],
     runtimeHelpers: true,
     babelrc: false
   },
@@ -23,12 +24,14 @@ const babelConfig = {
       'flow',
       ['latest', {es2015: {modules: false}}]
     ],
+    plugins: ['transform-runtime'],
     runtimeHelpers: true,
     babelrc: false
   },
   umd: {
     presets: ['flow', 'es2015-rollup'],
-    plugins: [],
+    plugins: ['transform-runtime'],
+    runtimeHelpers: true,
     babelrc: false
   },
   iife: {
