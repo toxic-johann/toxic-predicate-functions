@@ -113,8 +113,8 @@ export function isDate (obj: any): boolean {
  * @return {Boolean}     [description]
  */
 export function isString (str: any): boolean {
-  return typeof str === 'string'
-   || str instanceof String;
+  return typeof str === 'string' ||
+   str instanceof String;
 }
 /**
  * is Boolean or not
