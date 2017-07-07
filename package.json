@@ -17,7 +17,8 @@
     "b-common": "rollup -c build/rollup.config.common.js",
     "b-es": "rollup -c build/rollup.config.es.js",
     "b-umd": "rollup -c build/rollup.config.umd.js",
-    "b-min": "rollup -c build/rollup.config.min.js"
+    "b-min": "rollup -c build/rollup.config.min.js",
+    "doc": "documentation readme  src/index.js --section=doc --github=true --project-version=true"
   },
   "repository": {
     "type": "git",
