@@ -1,5 +1,11 @@
 // @flow
 /**
+ * to check whether the object is defined or not
+ */
+export function defined (obj: any): boolean {
+  return typeof obj !== 'undefined';
+}
+/**
  * is void element or not ? Means it will return true when val is undefined or null
  */
 export function isVoid (obj: any): boolean {
