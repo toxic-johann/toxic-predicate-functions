@@ -7,13 +7,13 @@ const banner = `
  */
 `;
 import flow from 'rollup-plugin-flow-no-whitespace';
-import includePaths from 'rollup-plugin-includepaths';
 import babel from 'rollup-plugin-babel';
+import common from 'rollup-plugin-commonjs';
 const babelConfig = {
   common: {
     presets: [
       'flow',
-      ['latest', {es2015: {modules: false}}]
+      ['env', {modules: false}]
     ],
     plugins: ['transform-runtime'],
     runtimeHelpers: true,
@@ -22,7 +22,7 @@ const babelConfig = {
   es: {
     presets: [
       'flow',
-      ['latest', {es2015: {modules: false}}]
+      ['env', {modules: false}]
     ],
     plugins: ['transform-runtime'],
     runtimeHelpers: true,
@@ -30,8 +30,7 @@ const babelConfig = {
   },
   umd: {
     presets: ['flow', 'es2015-rollup'],
-    plugins: ['transform-runtime'],
-    runtimeHelpers: true,
+    plugins: [],
     babelrc: false
   },
   iife: {
@@ -52,12 +51,7 @@ export default function (mode) {
     plugins: [
       babel(babelConfig[mode]),
       flow(),
-      includePaths({
-        include: {},
-        paths: ['src'],
-        external: [],
-        extensions: ['.js']
-      })
+      common()
     ]
   };
 };
