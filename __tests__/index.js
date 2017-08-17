@@ -20,6 +20,26 @@ describe('isObject', () => {
   });
 });
 
+describe('defined', () => {
+  const examples = [
+    123, '123', true, {},
+    {a: 123}, function (argument) {}, () => console.log('hello'), undefined,
+    [], [1, 2, 3], null, new String(), // eslint-disable-line no-new-wrappers
+    new Error(), new Boolean(), new Function(), new RegExp() // eslint-disable-line no-new-wrappers
+  ];
+  const results = [
+    true, true, true, true,
+    true, true, true, false,
+    true, true, true, true,
+    true, true, true, true
+  ];
+  examples.forEach((example, index) => {
+    test(index.toString(), () => {
+      expect(utils.defined(example)).toBe(results[index]);
+    });
+  });
+});
+
 describe('isArray', () => {
   const examples = [
     123, '123', true, { length: 10 },
