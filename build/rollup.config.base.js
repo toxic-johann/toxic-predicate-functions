@@ -46,7 +46,7 @@ const babelConfig = {
 };
 export default function (mode) {
   return {
-    entry: 'src/index.js',
+    input: 'src/index.js',
     banner,
     plugins: [
       babel(babelConfig[mode]),

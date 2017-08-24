@@ -67,7 +67,7 @@ export function isEmpty (obj: any): boolean {
  * is it an event or not
  */
 export function isEvent (obj: any): boolean {
-  return obj instanceof Event || obj.originalEvent instanceof Event;
+  return obj instanceof Event || (obj && obj.originalEvent) instanceof Event;
 }
 /**
  * is it a blob

@@ -239,11 +239,11 @@ describe('isVoid', () => {
 describe('isEvent', () => {
   const examples = [
     new Event('look', {'bubbles': true, 'cancelable': false}), {}, [], new String(), // eslint-disable-line no-new-wrappers
-    new Function(), function () {}
+    new Function(), function () {}, undefined
   ];
   const results = [
     true, false, false, false,
-    false, false
+    false, false, false
   ];
   examples.forEach((example, index) => {
     test(index.toString(), () => {
