@@ -177,7 +177,9 @@ export function isHTMLString (str: string): boolean {
 export function isError (val: any): boolean {
   return val instanceof Error;
 }
-
+/**
+ * check if is an RegExp
+ */
 export function isRegExp (val: any): boolean {
   return val instanceof RegExp;
 }

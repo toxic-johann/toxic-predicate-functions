@@ -34,7 +34,7 @@ if you are using `flow`, you should import our flow defination, by adding this t
 
 ### defined
 
-[src/index.js:5-7](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L5-L7 "Source code on GitHub")
+[src/index.js:5-7](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L5-L7 "Source code on GitHub")
 
 to check whether the object is defined or not
 
@@ -46,7 +46,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isVoid
 
-[src/index.js:11-13](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L11-L13 "Source code on GitHub")
+[src/index.js:11-13](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L11-L13 "Source code on GitHub")
 
 is void element or not ? Means it will return true when val is undefined or null
 
@@ -58,7 +58,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isArray
 
-[src/index.js:17-19](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L17-L19 "Source code on GitHub")
+[src/index.js:17-19](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L17-L19 "Source code on GitHub")
 
 to check whether a variable is array
 
@@ -70,7 +70,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isFunction
 
-[src/index.js:24-26](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L24-L26 "Source code on GitHub")
+[src/index.js:24-26](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L24-L26 "Source code on GitHub")
 
 is it a function or not
 
@@ -82,7 +82,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isObject
 
-[src/index.js:31-34](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L31-L34 "Source code on GitHub")
+[src/index.js:31-34](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L31-L34 "Source code on GitHub")
 
 is it an object or not
 
@@ -94,7 +94,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isNumber
 
-[src/index.js:38-40](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L38-L40 "Source code on GitHub")
+[src/index.js:38-40](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L38-L40 "Source code on GitHub")
 
 to tell you if it's a real number
 
@@ -106,7 +106,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isNumeric
 
-[src/index.js:44-46](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L44-L46 "Source code on GitHub")
+[src/index.js:44-46](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L44-L46 "Source code on GitHub")
 
 to tell you if the val can be transfer into number
 
@@ -118,7 +118,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isInteger
 
-[src/index.js:50-52](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L50-L52 "Source code on GitHub")
+[src/index.js:50-52](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L50-L52 "Source code on GitHub")
 
 is it an interget or not
 
@@ -130,7 +130,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isEmpty
 
-[src/index.js:57-65](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L57-L65 "Source code on GitHub")
+[src/index.js:57-65](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L57-L65 "Source code on GitHub")
 
 return true when the value is "", {}, \[], 0, null, undefined, false.
 
@@ -142,7 +142,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isEvent
 
-[src/index.js:69-71](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L69-L71 "Source code on GitHub")
+[src/index.js:69-71](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L69-L71 "Source code on GitHub")
 
 is it an event or not
 
@@ -154,7 +154,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isBlob
 
-[src/index.js:75-77](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L75-L77 "Source code on GitHub")
+[src/index.js:75-77](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L75-L77 "Source code on GitHub")
 
 is it a blob
 
@@ -166,7 +166,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isFile
 
-[src/index.js:81-83](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L81-L83 "Source code on GitHub")
+[src/index.js:81-83](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L81-L83 "Source code on GitHub")
 
 is it a file uploaded by user through file inpue
 
@@ -178,7 +178,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isDate
 
-[src/index.js:87-89](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L87-L89 "Source code on GitHub")
+[src/index.js:87-89](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L87-L89 "Source code on GitHub")
 
 is it a date
 
@@ -190,7 +190,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isString
 
-[src/index.js:93-96](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L93-L96 "Source code on GitHub")
+[src/index.js:93-96](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L93-L96 "Source code on GitHub")
 
 is it a string
 
@@ -202,7 +202,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isBoolean
 
-[src/index.js:100-102](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L100-L102 "Source code on GitHub")
+[src/index.js:100-102](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L100-L102 "Source code on GitHub")
 
 is Boolean or not
 
@@ -214,7 +214,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isPromise
 
-[src/index.js:106-108](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L106-L108 "Source code on GitHub")
+[src/index.js:106-108](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L106-L108 "Source code on GitHub")
 
 is a promise or not
 
@@ -226,7 +226,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isPrimitive
 
-[src/index.js:112-114](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L112-L114 "Source code on GitHub")
+[src/index.js:112-114](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L112-L114 "Source code on GitHub")
 
 is Primitive type or not, whick means it will return true when data is number/string/boolean/undefined/null
 
@@ -238,7 +238,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isUrl
 
-[src/index.js:118-120](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L118-L120 "Source code on GitHub")
+[src/index.js:118-120](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L118-L120 "Source code on GitHub")
 
 is it an url, but this test require the url to have an protocol
 
@@ -250,7 +250,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isNode
 
-[src/index.js:124-131](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L124-L131 "Source code on GitHub")
+[src/index.js:124-131](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L124-L131 "Source code on GitHub")
 
 to test if a HTML node
 
@@ -262,7 +262,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isElement
 
-[src/index.js:135-143](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L135-L143 "Source code on GitHub")
+[src/index.js:135-143](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L135-L143 "Source code on GitHub")
 
 to test if a HTML element
 
@@ -274,7 +274,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isChildNode
 
-[src/index.js:147-152](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L147-L152 "Source code on GitHub")
+[src/index.js:147-152](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L147-L152 "Source code on GitHub")
 
 check if node A is node B's parent or not
 
@@ -287,7 +287,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isPosterityNode
 
-[src/index.js:156-167](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L156-L167 "Source code on GitHub")
+[src/index.js:156-167](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L156-L167 "Source code on GitHub")
 
 check if node B is node A's posterrity or not
 
@@ -300,7 +300,7 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isHTMLString
 
-[src/index.js:171-173](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L171-L173 "Source code on GitHub")
+[src/index.js:171-173](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L171-L173 "Source code on GitHub")
 
 check if the string is an HTMLString
 
@@ -312,9 +312,21 @@ Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### isError
 
-[src/index.js:177-179](https://github.com/toxic-johann/toxic-predicate-functions/blob/7ee38ef3107afb7ad37bdf3eb6e655d3ee255817/src/index.js#L177-L179 "Source code on GitHub")
+[src/index.js:177-179](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L177-L179 "Source code on GitHub")
 
 check if is an error
+
+**Parameters**
+
+-   `val` **any** 
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+### isRegExp
+
+[src/index.js:183-185](https://github.com/toxic-johann/toxic-predicate-functions/blob/126adb1bdf2ab98826e10aa1b465209accb97197/src/index.js#L183-L185 "Source code on GitHub")
+
+check if is an RegExp
 
 **Parameters**
 
