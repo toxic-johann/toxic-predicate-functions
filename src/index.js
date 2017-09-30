@@ -177,3 +177,7 @@ export function isHTMLString (str: string): boolean {
 export function isError (val: any): boolean {
   return val instanceof Error;
 }
+
+export function isRegExp (val: any): boolean {
+  return val instanceof RegExp;
+}

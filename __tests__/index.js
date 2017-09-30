@@ -324,6 +324,28 @@ describe('isPrimitive', () => {
   });
 });
 
+describe('isRegExp', () => {
+  const examples = [
+    1, String('123'), '1' + '2', '1.1',
+    {a: 123}, {}, function (argument) {}, () => console.log('hello'),
+    undefined, [], [1, 2, 3], null,
+    new String(), true, new Boolean(), new Date(), // eslint-disable-line no-new-wrappers
+    /abc/, new RegExp('abc')
+  ];
+  const results = [
+    false, false, false, false,
+    false, false, false, false,
+    false, false, false, false,
+    false, false, false, false,
+    true, true
+  ];
+  examples.forEach((example, index) => {
+    test(index.toString(), () => {
+      expect(utils.isRegExp(example)).toBe(results[index]);
+    });
+  });
+});
+
 describe('isFunction', () => {
   const examples = [
     /./, 1, '123', true,
