@@ -1,0 +1,16 @@
+export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError } from "lodash";
+export declare const isVoid: (value: any) => value is null;
+export declare const isObject: (value?: any) => boolean;
+export declare function isNumeric(obj: any): boolean;
+export declare function isEmpty(obj: any): boolean;
+export declare function isEvent(obj: any): boolean;
+export declare function isBlob(obj: any): boolean;
+export declare function isFile(obj: any): boolean;
+export declare function isPromise(obj: any): boolean;
+export declare function isPrimitive(val: any): boolean;
+export declare function isUrl(str: any): boolean;
+export declare function isNode(obj: any): boolean;
+export declare function isElement(obj: any): boolean;
+export declare function isChildNode(parent: Node, child: Node): boolean;
+export declare function isPosterityNode(parent: Node, child: Node): boolean;
+export declare function isHTMLString(str: string): boolean;

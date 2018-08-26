@@ -1,4 +1,9 @@
-const {version, name, author, license} = require('../package.json');
+const {
+  version,
+  name,
+  author,
+  license,
+} = require('../package.json');
 const banner = `
 /**
  * ${name} v${version}
@@ -6,58 +11,87 @@ const banner = `
  * Released under ${license}
  */
 `;
-import flow from 'rollup-plugin-flow-no-whitespace';
 import includePaths from 'rollup-plugin-includepaths';
 import babel from 'rollup-plugin-babel';
+import typescript from 'rollup-plugin-typescript';
 const babelConfig = {
   common: {
     presets: [
-      'flow',
-      ['latest', {es2015: {modules: false}}]
+      [ 'env', {
+        modules: false,
+        targets: {
+          browsers: [ 'last 2 versions', 'not ie <= 8' ],
+        },
+      }],
     ],
-    plugins: ['transform-runtime'],
+    plugins: [ 'transform-runtime' ],
     runtimeHelpers: true,
-    babelrc: false
+    babelrc: false,
   },
   es: {
     presets: [
-      'flow',
-      ['latest', {es2015: {modules: false}}]
+      [ 'env', {
+        modules: false,
+        targets: {
+          browsers: [ 'last 2 versions', 'not ie <= 8' ],
+        },
+      }],
     ],
-    plugins: ['transform-runtime'],
+    plugins: [ 'transform-runtime' ],
     runtimeHelpers: true,
-    babelrc: false
+    babelrc: false,
   },
   umd: {
-    presets: ['flow', 'es2015-rollup'],
-    plugins: ['transform-runtime'],
+    presets: [
+      [ 'env', {
+        modules: false,
+        targets: {
+          browsers: [ 'last 2 versions', 'not ie <= 8' ],
+        },
+      }],
+    ],
+    plugins: [ 'transform-runtime' ],
     runtimeHelpers: true,
-    babelrc: false
+    babelrc: false,
   },
   iife: {
-    presets: ['flow', 'es2015-rollup'],
+    presets: [
+      [ 'env', {
+        modules: false,
+        targets: {
+          browsers: [ 'last 2 versions', 'not ie <= 8' ],
+        },
+      }],
+    ],
     plugins: [],
-    babelrc: false
+    babelrc: false,
   },
   min: {
-    presets: ['flow', 'es2015-rollup'],
+    presets: [
+      [ 'env', {
+        modules: false,
+        targets: {
+          browsers: [ 'last 2 versions', 'not ie <= 8' ],
+        },
+      }],
+    ],
     plugins: [],
-    babelrc: false
-  }
+    babelrc: false,
+  },
 };
-export default function (mode) {
+export default function(mode) {
   return {
-    entry: 'src/index.js',
+    entry: 'src/index.ts',
     banner,
     plugins: [
+      typescript(),
       babel(babelConfig[mode]),
-      flow(),
       includePaths({
         include: {},
-        paths: ['src'],
+        paths: [ 'src' ],
         external: [],
-        extensions: ['.js']
-      })
-    ]
+        extensions: [ '.js' ],
+      }),
+    ],
   };
-};
+}
