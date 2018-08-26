@@ -3,6 +3,7 @@ const {
   name,
   author,
   license,
+  dependencies,
 } = require('../package.json');
 const banner = `
 /**
@@ -11,9 +12,10 @@ const banner = `
  * Released under ${license}
  */
 `;
-import includePaths from 'rollup-plugin-includepaths';
 import babel from 'rollup-plugin-babel';
 import typescript from 'rollup-plugin-typescript';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 const babelConfig = {
   common: {
     presets: [
@@ -24,7 +26,8 @@ const babelConfig = {
         },
       }],
     ],
-    plugins: [ 'transform-runtime' ],
+    plugins: [ 'transform-runtime', 'lodash' ],
+    exclude: 'node_modules/**',
     runtimeHelpers: true,
     babelrc: false,
   },
@@ -37,7 +40,8 @@ const babelConfig = {
         },
       }],
     ],
-    plugins: [ 'transform-runtime' ],
+    plugins: [ 'transform-runtime', 'lodash' ],
+    exclude: 'node_modules/**',
     runtimeHelpers: true,
     babelrc: false,
   },
@@ -50,7 +54,8 @@ const babelConfig = {
         },
       }],
     ],
-    plugins: [ 'transform-runtime' ],
+    plugins: [ 'transform-runtime', 'lodash' ],
+    exclude: 'node_modules/**',
     runtimeHelpers: true,
     babelrc: false,
   },
@@ -63,7 +68,8 @@ const babelConfig = {
         },
       }],
     ],
-    plugins: [],
+    exclude: 'node_modules/**',
+    plugins: [ 'lodash' ],
     babelrc: false,
   },
   min: {
@@ -75,23 +81,28 @@ const babelConfig = {
         },
       }],
     ],
-    plugins: [],
+    plugins: [ 'lodash' ],
+    exclude: 'node_modules/**',
     babelrc: false,
   },
 };
+const externalRegExp = new RegExp(Object.keys(dependencies).join('|'));
 export default function(mode) {
   return {
-    entry: 'src/index.ts',
+    input: 'src/index.ts',
     banner,
+    external(id) {
+      return !/min|umd|iife/.test(mode) && externalRegExp.test(id);
+    },
     plugins: [
       typescript(),
       babel(babelConfig[mode]),
-      includePaths({
-        include: {},
-        paths: [ 'src' ],
-        external: [],
-        extensions: [ '.js' ],
+      commonjs({
+        namedExports: {
+          lodash: 'node_modules/lodash/index.js',
+        },
       }),
+      resolve(),
     ],
   };
 }

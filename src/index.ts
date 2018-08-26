@@ -1,4 +1,10 @@
-import { isArray, isNil, isObject as _isObject, isPlainObject, isString } from "lodash";
+import {
+  isArray as _isArray,
+  isNil,
+  isObject as _isObject,
+  isPlainObject,
+  isString as _isString,
+} from "lodash";
 export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError } from "lodash";
 /**
  * is void element or not ? Means it will return true when val is undefined or null
@@ -12,13 +18,13 @@ export const isObject = isPlainObject;
  * to tell you if the val can be transfer into number
  */
 export function isNumeric(obj: any): boolean {
-  return !isArray(obj) && (obj - parseFloat(obj) + 1) >= 0;
+  return !_isArray(obj) && (obj - parseFloat(obj) + 1) >= 0;
 }
 /**
  * return true when the value is "", {}, [], 0, null, undefined, false.
  */
 export function isEmpty(obj: any): boolean {
-  if (isArray(obj)) {
+  if (_isArray(obj)) {
     return obj.length === 0;
   } else if (isObject(obj)) {
     return Object.keys(obj).length === 0;
@@ -42,7 +48,7 @@ export function isBlob(obj: any): boolean {
  * is it a file uploaded by user through file inpue
  */
 export function isFile(obj: any): boolean {
-  return isBlob(obj) && isString(obj.name);
+  return isBlob(obj) && _isString(obj.name);
 }
 /**
  * is a promise or not
@@ -61,30 +67,30 @@ export function isPrimitive(val: any): boolean {
  */
 export function isUrl(str: any): boolean {
   // tslint:disable-next-line
-  return isString(str) && !!str.match(/^((https?|ftp|rtsp|mms):\/\/)(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6}|localhost)(:[0-9]{1,4})?((\/?)|(\/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+\/?)$/i);
+  return _isString(str) && !!str.match(/^((https?|ftp|rtsp|mms):\/\/)(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6}|localhost)(:[0-9]{1,4})?((\/?)|(\/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+\/?)$/i);
 }
 /**
  * to test if a HTML node
  */
 export function isNode(obj: any): boolean {
-  return !!(typeof Node === "object"
-      ? obj instanceof Node
-      : obj &&
-        typeof obj === "object" &&
-        typeof obj.nodeType === "number" &&
-        typeof obj.nodeName === "string");
+  return !!(typeof Node === "object" ?
+    obj instanceof Node :
+    obj &&
+    typeof obj === "object" &&
+    typeof obj.nodeType === "number" &&
+    typeof obj.nodeName === "string");
 }
 /**
  * to test if a HTML element
  */
 export function isElement(obj: any): boolean {
-  return !!(typeof HTMLElement === "object"
-    ? obj instanceof HTMLElement
-    : obj &&
-      typeof obj === "object" &&
-      obj !== null &&
-      obj.nodeType === 1 &&
-      typeof obj.nodeName === "string");
+  return !!(typeof HTMLElement === "object" ?
+    obj instanceof HTMLElement :
+    obj &&
+    typeof obj === "object" &&
+    obj !== null &&
+    obj.nodeType === 1 &&
+    typeof obj.nodeName === "string");
 }
 /**
  * check if node A is node B's parent or not
@@ -114,5 +120,5 @@ export function isPosterityNode(parent: Node, child: Node): boolean {
  * check if the string is an HTMLString
  */
 export function isHTMLString(str: string): boolean {
-  return isString(str) && /<[^>]+?>/.test(str);
+  return _isString(str) && /<[^>]+?>/.test(str);
 }
