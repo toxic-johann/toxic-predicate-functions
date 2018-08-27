@@ -1,6 +1,6 @@
 {
   "name": "toxic-predicate-functions",
-  "version": "0.2.0-alpha.2",
+  "version": "0.2.0",
   "description": "predicate functions",
   "main": "lib/index.js",
   "module": "lib/index.mjs",

@@ -1,6 +1,7 @@
-export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError } from "lodash";
+export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError, isRegExp } from "lodash";
 export declare const isVoid: (value: any) => value is null;
 export declare const isObject: (value?: any) => boolean;
+export declare function defined(obj: any): boolean;
 export declare function isNumeric(obj: any): boolean;
 export declare function isEmpty(obj: any): boolean;
 export declare function isEvent(obj: any): boolean;
