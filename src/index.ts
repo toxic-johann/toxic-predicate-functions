@@ -4,8 +4,9 @@ import {
   isObject as _isObject,
   isPlainObject,
   isString as _isString,
+  isUndefined,
 } from "lodash";
-export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError } from "lodash";
+export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError, isRegExp } from "lodash";
 /**
  * is void element or not ? Means it will return true when val is undefined or null
  */
@@ -14,6 +15,12 @@ export const isVoid = isNil;
  * is it an plain object or not
  */
 export const isObject = isPlainObject;
+/**
+ * to check whether the object is defined or not
+ */
+export function defined(obj: any): boolean {
+  return !isUndefined(obj);
+}
 /**
  * to tell you if the val can be transfer into number
  */
@@ -36,7 +43,7 @@ export function isEmpty(obj: any): boolean {
  * is it an event or not
  */
 export function isEvent(obj: any): boolean {
-  return obj instanceof Event || obj.originalEvent instanceof Event;
+  return obj instanceof Event || (obj && obj.originalEvent) instanceof Event;
 }
 /**
  * is it a blob

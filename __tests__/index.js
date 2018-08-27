@@ -21,6 +21,26 @@ describe('isObject', () => {
   });
 });
 
+describe('defined', () => {
+  const examples = [
+    123, '123', true, {},
+    { a: 123 }, function() {}, () => console.log('hello'), undefined,
+    [], [ 1, 2, 3 ], null, new String(), // eslint-disable-line no-new-wrappers
+    new Error(), new Boolean(), new Function(), new RegExp(), // eslint-disable-line no-new-wrappers
+  ];
+  const results = [
+    true, true, true, true,
+    true, true, true, false,
+    true, true, true, true,
+    true, true, true, true,
+  ];
+  examples.forEach((example, index) => {
+    test(index.toString(), () => {
+      expect(utils.defined(example)).toBe(results[index]);
+    });
+  });
+});
+
 describe('isArray', () => {
   const examples = [
     123, '123', true, { length: 10 },
@@ -220,11 +240,11 @@ describe('isVoid', () => {
 describe('isEvent', () => {
   const examples = [
     new Event('look', { bubbles: true, cancelable: false }), {}, [], new String(), // eslint-disable-line no-new-wrappers
-    new Function(), function() {},
+    new Function(), function() {}, undefined,
   ];
   const results = [
     true, false, false, false,
-    false, false,
+    false, false, false,
   ];
   examples.forEach((example, index) => {
     test(index.toString(), () => {
@@ -301,6 +321,28 @@ describe('isPrimitive', () => {
   examples.forEach((example, index) => {
     test(index.toString(), () => {
       expect(utils.isPrimitive(example)).toBe(results[index]);
+    });
+  });
+});
+
+describe('isRegExp', () => {
+  const examples = [
+    1, String('123'), '1' + '2', '1.1',
+    { a: 123 }, {}, function() {}, () => console.log('hello'),
+    undefined, [], [ 1, 2, 3 ], null,
+    new String(), true, new Boolean(), new Date(), // eslint-disable-line no-new-wrappers
+    /abc/, new RegExp('abc'),
+  ];
+  const results = [
+    false, false, false, false,
+    false, false, false, false,
+    false, false, false, false,
+    false, false, false, false,
+    true, true,
+  ];
+  examples.forEach((example, index) => {
+    test(index.toString(), () => {
+      expect(utils.isRegExp(example)).toBe(results[index]);
     });
   });
 });
