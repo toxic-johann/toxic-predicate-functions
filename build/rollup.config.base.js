@@ -5,10 +5,10 @@ const {
   license,
   dependencies,
 } = require('../package.json');
-const banner = `
+export const banner = `
 /**
  * ${name} v${version}
- * (c) 2017 ${author}
+ * (c) 2017-${(new Date()).getFullYear()} ${author}
  * Released under ${license}
  */
 `;
@@ -90,7 +90,6 @@ const externalRegExp = new RegExp(Object.keys(dependencies).join('|'));
 export default function(mode) {
   return {
     input: 'src/index.ts',
-    banner,
     external(id) {
       return !/min|umd|iife/.test(mode) && externalRegExp.test(id);
     },
