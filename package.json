@@ -1,6 +1,6 @@
 {
   "name": "toxic-predicate-functions",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "predicate functions",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -37,32 +37,32 @@
   },
   "homepage": "https://github.com/toxic-johann/toxic-predicate-functions#readme",
   "devDependencies": {
-    "@types/jest": "^23.3.1",
+    "@types/jest": "^23.3.2",
     "@types/lodash": "^4.14.116",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.2",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-latest": "^6.24.1",
     "documentation": "^8.1.2",
-    "eslint": "^5.4.0",
+    "eslint": "^5.6.0",
     "eslint-config-egg": "^7.1.0",
     "eslint-plugin-jest": "^21.22.0",
     "husky": "^0.14.3",
-    "jest": "^23.5.0",
-    "nyc": "^12.0.2",
-    "rollup": "^0.65.0",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-commonjs": "^9.1.6",
+    "jest": "^23.6.0",
+    "nyc": "^13.0.1",
+    "rollup": "^0.66.1",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-includepaths": "^0.2.3",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-typescript": "^0.8.1",
-    "rollup-plugin-uglify": "^4.0.0",
-    "ts-jest": "^23.1.4",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-uglify": "^6.0.0",
+    "ts-jest": "^23.10.0",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.3"
   },
   "jest": {
     "modulePaths": [
@@ -86,6 +86,6 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.11"
   }
 }

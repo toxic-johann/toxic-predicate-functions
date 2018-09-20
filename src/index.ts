@@ -42,25 +42,25 @@ export function isEmpty(obj: any): boolean {
 /**
  * is it an event or not
  */
-export function isEvent(obj: any): boolean {
+export function isEvent(obj: any): obj is Event {
   return obj instanceof Event || (obj && obj.originalEvent) instanceof Event;
 }
 /**
  * is it a blob
  */
-export function isBlob(obj: any): boolean {
+export function isBlob(obj: any): obj is Blob {
   return obj instanceof Blob;
 }
 /**
  * is it a file uploaded by user through file inpue
  */
-export function isFile(obj: any): boolean {
-  return isBlob(obj) && _isString(obj.name);
+export function isFile(obj: any): obj is File {
+  return obj && _isString(obj.name) && isBlob(obj);
 }
 /**
  * is a promise or not
  */
-export function isPromise(obj: any): boolean {
+export function isPromise(obj: any): obj is Promise<any> {
   return !!obj && (typeof obj === "object" || typeof obj === "function") && typeof obj.then === "function";
 }
 /**
@@ -79,7 +79,7 @@ export function isUrl(str: any): boolean {
 /**
  * to test if a HTML node
  */
-export function isNode(obj: any): boolean {
+export function isNode(obj: any): obj is Node {
   return !!(typeof Node === "object" ?
     obj instanceof Node :
     obj &&
@@ -90,7 +90,7 @@ export function isNode(obj: any): boolean {
 /**
  * to test if a HTML element
  */
-export function isElement(obj: any): boolean {
+export function isElement(obj: any): obj is Element {
   return !!(typeof HTMLElement === "object" ?
     obj instanceof HTMLElement :
     obj &&
