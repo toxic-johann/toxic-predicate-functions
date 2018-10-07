@@ -19,3 +19,6 @@ bundle-size/
 env-check.js
 karma.conf.js
 src/
+ts-out/
+tsconfig.json
+tslint.json
