@@ -7,6 +7,14 @@ import {
   isUndefined,
 } from "lodash";
 export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError, isRegExp } from "lodash";
+// **********************  judgement   ************************
+/**
+ * check if the code running in browser environment (not include worker env)
+ * @returns {Boolean}
+ */
+export const inBrowser =
+    typeof window !== "undefined" &&
+    Object.prototype.toString.call(window) !== "[object Object]";
 /**
  * is void element or not ? Means it will return true when val is undefined or null
  */

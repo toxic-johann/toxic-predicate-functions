@@ -1,6 +1,10 @@
 /* eslint-disable no-new-func, no-useless-concat */
 import * as utils from 'index';
 
+describe('inBrowser', () => {
+  expect(utils.inBrowser).toBe(true);
+});
+
 describe('isObject', () => {
   const examples = [
     123, '123', true, {},
