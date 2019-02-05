@@ -41,7 +41,7 @@
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "@types/jest": "^23.3.3",
+    "@types/jest": "^24.0.0",
     "@types/lodash": "^4.14.116",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
