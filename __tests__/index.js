@@ -441,7 +441,7 @@ describe('isPromise', () => {
   const examples = [
     1, 0, true, false,
     {}, [], new Promise(() => {}), Promise.resolve(),
-    Promise.reject().catch(() => {}),
+    Promise.reject(new Error('test')).catch(() => {}),
   ];
   const results = [
     false, false, false, false,
