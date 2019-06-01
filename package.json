@@ -1,6 +1,6 @@
 {
   "name": "toxic-predicate-functions",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "predicate functions",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -90,7 +90,9 @@
       "json",
       "node"
     ],
-    "transformIgnorePatterns": [ "/node_modules/(?!lodash-es).+\\.js$" ]
+    "transformIgnorePatterns": [
+      "/node_modules/(?!lodash-es).+\\.js$"
+    ]
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
