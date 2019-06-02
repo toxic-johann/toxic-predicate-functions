@@ -45,23 +45,23 @@ describe('defined', () => {
   });
 });
 
-describe('isArray', () => {
-  const examples = [
-    123, '123', true, { length: 10 },
-    { a: 123 }, function() {}, () => console.log('hello'), undefined,
-    [], [1, 2, 3], null, new Array() // eslint-disable-line
-  ];
-  const results = [
-    false, false, false, false,
-    false, false, false, false,
-    true, true, false, true,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isArray(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isArray', () => {
+//   const examples = [
+//     123, '123', true, { length: 10 },
+//     { a: 123 }, function() {}, () => console.log('hello'), undefined,
+//     [], [1, 2, 3], null, new Array() // eslint-disable-line
+//   ];
+//   const results = [
+//     false, false, false, false,
+//     false, false, false, false,
+//     true, true, false, true,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isArray(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
 describe('isNumeric', () => {
   const examples = [
@@ -83,85 +83,85 @@ describe('isNumeric', () => {
   });
 });
 
-describe('isNumber', () => {
-  const examples = [
-    1, 1.1, -1.2, '1.1',
-    '.2', '-1.1', '1.2px', 'sth',
-    { a: 123 }, {}, function() {}, () => console.log('hello'),
-    undefined, [], [ 1, 2, 3 ], null,
-  ];
-  const results = [
-    true, true, true, false,
-    false, false, false, false,
-    false, false, false, false,
-    false, false, false, false,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isNumber(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isNumber', () => {
+//   const examples = [
+//     1, 1.1, -1.2, '1.1',
+//     '.2', '-1.1', '1.2px', 'sth',
+//     { a: 123 }, {}, function() {}, () => console.log('hello'),
+//     undefined, [], [ 1, 2, 3 ], null,
+//   ];
+//   const results = [
+//     true, true, true, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isNumber(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
-describe('isInteger', () => {
-  const examples = [
-    1, 1.1, -1.2, '1.1',
-    '0.2', '-1.1', '1.2px', 'sth',
-    { a: 123 }, {}, function() {}, () => console.log('hello'),
-    undefined, [], [ 1, 2, 3 ], null,
-  ];
-  const results = [
-    true, false, false, false,
-    false, false, false, false,
-    false, false, false, false,
-    false, false, false, false,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isInteger(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isInteger', () => {
+//   const examples = [
+//     1, 1.1, -1.2, '1.1',
+//     '0.2', '-1.1', '1.2px', 'sth',
+//     { a: 123 }, {}, function() {}, () => console.log('hello'),
+//     undefined, [], [ 1, 2, 3 ], null,
+//   ];
+//   const results = [
+//     true, false, false, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isInteger(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
-describe('isBoolean', () => {
-  const examples = [
-    123, '123', true, {},
-    { a: 123 }, function() {}, () => console.log('hello'), undefined,
-    [], [ 1, 2, 3 ], null, new String(), // eslint-disable-line no-new-wrappers
-    new Error(), new Boolean(), new Function(), new RegExp(), // eslint-disable-line no-new-wrappers
-  ];
-  const results = [
-    false, false, true, false,
-    false, false, false, false,
-    false, false, false, false,
-    false, true, false, false,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isBoolean(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isBoolean', () => {
+//   const examples = [
+//     123, '123', true, {},
+//     { a: 123 }, function() {}, () => console.log('hello'), undefined,
+//     [], [ 1, 2, 3 ], null, new String(), // eslint-disable-line no-new-wrappers
+//     new Error(), new Boolean(), new Function(), new RegExp(), // eslint-disable-line no-new-wrappers
+//   ];
+//   const results = [
+//     false, false, true, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//     false, true, false, false,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isBoolean(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
-describe('isString', () => {
-  const examples = [
-    1, String('123'), '1' + '2', '1.1',
-    { a: 123 }, {}, function() {}, () => console.log('hello'),
-    undefined, [], [ 1, 2, 3 ], null,
-    new String(), // eslint-disable-line no-new-wrappers
-  ];
-  const results = [
-    false, true, true, true,
-    false, false, false, false,
-    false, false, false, false,
-    true,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isString(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isString', () => {
+//   const examples = [
+//     1, String('123'), '1' + '2', '1.1',
+//     { a: 123 }, {}, function() {}, () => console.log('hello'),
+//     undefined, [], [ 1, 2, 3 ], null,
+//     new String(), // eslint-disable-line no-new-wrappers
+//   ];
+//   const results = [
+//     false, true, true, true,
+//     false, false, false, false,
+//     false, false, false, false,
+//     true,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isString(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
 describe('isHTMLString', () => {
   const examples = [
@@ -293,21 +293,21 @@ describe('isFile', () => {
   });
 });
 
-describe('isDate', () => {
-  const examples = [
-    new Date(), {}, [], new String(), // eslint-disable-line no-new-wrappers
-    new Function(), function() {}, '2017-02-03', new Date('2017-02-03'),
-  ];
-  const results = [
-    true, false, false, false,
-    false, false, false, true,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isDate(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isDate', () => {
+//   const examples = [
+//     new Date(), {}, [], new String(), // eslint-disable-line no-new-wrappers
+//     new Function(), function() {}, '2017-02-03', new Date('2017-02-03'),
+//   ];
+//   const results = [
+//     true, false, false, false,
+//     false, false, false, true,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isDate(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
 describe('isPrimitive', () => {
   const examples = [
@@ -329,47 +329,47 @@ describe('isPrimitive', () => {
   });
 });
 
-describe('isRegExp', () => {
-  const examples = [
-    1, String('123'), '1' + '2', '1.1',
-    { a: 123 }, {}, function() {}, () => console.log('hello'),
-    undefined, [], [ 1, 2, 3 ], null,
-    new String(), true, new Boolean(), new Date(), // eslint-disable-line no-new-wrappers
-    /abc/, new RegExp('abc'),
-  ];
-  const results = [
-    false, false, false, false,
-    false, false, false, false,
-    false, false, false, false,
-    false, false, false, false,
-    true, true,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isRegExp(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isRegExp', () => {
+//   const examples = [
+//     1, String('123'), '1' + '2', '1.1',
+//     { a: 123 }, {}, function() {}, () => console.log('hello'),
+//     undefined, [], [ 1, 2, 3 ], null,
+//     new String(), true, new Boolean(), new Date(), // eslint-disable-line no-new-wrappers
+//     /abc/, new RegExp('abc'),
+//   ];
+//   const results = [
+//     false, false, false, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//     false, false, false, false,
+//     true, true,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isRegExp(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
-describe('isFunction', () => {
-  const examples = [
-    /./, 1, '123', true,
-    new Boolean(), new String(), new Date(), new Number(), // eslint-disable-line no-new-wrappers
-    new Error(), new Boolean(), new Function(), new RegExp(), // eslint-disable-line no-new-wrappers
-    () => {}, class {}, function() {},
-  ];
-  const results = [
-    false, false, false, false,
-    false, false, false, false,
-    false, false, true, false,
-    true, true, true,
-  ];
-  examples.forEach((example, index) => {
-    test(index.toString(), () => {
-      expect(utils.isFunction(example)).toBe(results[index]);
-    });
-  });
-});
+// describe('isFunction', () => {
+//   const examples = [
+//     /./, 1, '123', true,
+//     new Boolean(), new String(), new Date(), new Number(), // eslint-disable-line no-new-wrappers
+//     new Error(), new Boolean(), new Function(), new RegExp(), // eslint-disable-line no-new-wrappers
+//     () => {}, class {}, function() {},
+//   ];
+//   const results = [
+//     false, false, false, false,
+//     false, false, false, false,
+//     false, false, true, false,
+//     true, true, true,
+//   ];
+//   examples.forEach((example, index) => {
+//     test(index.toString(), () => {
+//       expect(utils.isFunction(example)).toBe(results[index]);
+//     });
+//   });
+// });
 
 describe('isNode', () => {
   const examples = [
@@ -455,7 +455,7 @@ describe('isPromise', () => {
   });
 });
 
-describe('isError', () => {
-  expect(utils.isError(new Error('sth'))).toBe(true);
-  expect(utils.isError(123)).toBe(false);
-});
+// describe('isError', () => {
+//   expect(utils.isError(new Error('sth'))).toBe(true);
+//   expect(utils.isError(123)).toBe(false);
+// });

@@ -6,7 +6,6 @@ import {
   isString as _isString,
   isUndefined,
 } from "lodash-es";
-export { isArray, isNumber, isInteger, isBoolean, isString, isDate, isFunction, isError, isRegExp } from "lodash-es";
 // **********************  judgement   ************************
 /**
  * check if the code running in browser environment (not include worker env)
