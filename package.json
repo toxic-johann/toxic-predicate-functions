@@ -96,5 +96,6 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "lodash-es": "^4.17.15"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
