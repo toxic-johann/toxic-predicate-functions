@@ -5,15 +5,15 @@ import {
   isPlainObject,
   isString as _isString,
   isUndefined,
-} from "lodash-es";
+} from 'lodash-es';
 // **********************  judgement   ************************
 /**
  * check if the code running in browser environment (not include worker env)
  * @returns {Boolean}
  */
 export const inBrowser =
-    typeof window !== "undefined" &&
-    Object.prototype.toString.call(window) !== "[object Object]";
+    typeof window !== 'undefined' &&
+    Object.prototype.toString.call(window) !== '[object Object]';
 /**
  * is void element or not ? Means it will return true when val is undefined or null
  */
@@ -42,9 +42,9 @@ export function isEmpty(obj: any): boolean {
     return obj.length === 0;
   } else if (isObject(obj)) {
     return Object.keys(obj).length === 0;
-  } else {
-    return !obj;
   }
+  return !obj;
+
 }
 /**
  * is it an event or not
@@ -68,7 +68,7 @@ export function isFile(obj: any): obj is File {
  * is a promise or not
  */
 export function isPromise(obj: any): obj is Promise<any> {
-  return !!obj && (typeof obj === "object" || typeof obj === "function") && typeof obj.then === "function";
+  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
 }
 /**
  * is Primitive type or not, whick means it will return true when data is number/string/boolean/undefined/null
@@ -87,24 +87,24 @@ export function isUrl(str: any): boolean {
  * to test if a HTML node
  */
 export function isNode(obj: any): obj is Node {
-  return !!(typeof Node === "object" ?
+  return !!(typeof Node === 'object' ?
     obj instanceof Node :
     obj &&
-    typeof obj === "object" &&
-    typeof obj.nodeType === "number" &&
-    typeof obj.nodeName === "string");
+    typeof obj === 'object' &&
+    typeof obj.nodeType === 'number' &&
+    typeof obj.nodeName === 'string');
 }
 /**
  * to test if a HTML element
  */
 export function isElement(obj: any): obj is Element {
-  return !!(typeof HTMLElement === "object" ?
+  return !!(typeof HTMLElement === 'object' ?
     obj instanceof HTMLElement :
     obj &&
-    typeof obj === "object" &&
+    typeof obj === 'object' &&
     obj !== null &&
     obj.nodeType === 1 &&
-    typeof obj.nodeName === "string");
+    typeof obj.nodeName === 'string');
 }
 /**
  * check if node A is node B's parent or not

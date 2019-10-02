@@ -11,7 +11,7 @@
     "test": "jest --coverage && node env-node-check.js",
     "start": "jest --coverage --watch",
     "jest": "jest",
-    "lint": "tslint -c ./tslint.json 'src/**/*.ts' --fix && eslint ./ --fix",
+    "lint": "eslint -c ./eslintrc.typescript.js 'src/**/*.ts' --fix && eslint ./ --fix",
     "build": "npm run tsc && tsc --emitDeclarationOnly true --outDir ./lib && npm run b-common && npm run b-es && npm run b-umd && npm run b-min",
     "b-common": "rollup -c build/rollup.config.common.js",
     "b-es": "rollup -c build/rollup.config.es.js",
@@ -68,7 +68,6 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.3",
     "ts-jest": "^24.1.0",
-    "tslint": "^5.20.0",
     "typescript": "^3.6.3"
   },
   "jest": {
