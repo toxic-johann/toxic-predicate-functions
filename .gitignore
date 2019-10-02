@@ -58,5 +58,5 @@ typings/
 .env
 package-lock.json
 .DS_Store
-
+.npmrc
 ts-out
