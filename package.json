@@ -100,6 +100,6 @@
     "lodash-es": "^4.17.15"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/toxic-johann"
   }
 }
