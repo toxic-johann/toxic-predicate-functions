@@ -55,7 +55,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-preset-es2015-rollup": "^3.0.0",
-    "documentation": "^12.1.2",
+    "documentation": "^13.0.0",
     "eslint": "^6.5.1",
     "eslint-config-egg": "^8.0.0",
     "eslint-plugin-jest": "^23.0.0",
