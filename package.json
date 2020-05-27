@@ -96,7 +96,7 @@
     ]
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.3",
+    "@babel/runtime": "^7.10.1",
     "lodash-es": "^4.17.15"
   },
   "publishConfig": {
